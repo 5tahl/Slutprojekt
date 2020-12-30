@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="1029.0" style="-fx-background-color: #efefef;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="btnTutorial" mnemonicParsing="false" onAction="#showTutorial" text="Tutorial" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="inputField" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="901.0" promptText="Input Image URL. Example: https://i.ytimg.com/vi/wq2VvSxeXbM/maxresdefault.jpg">
+               <font>
+                  <Font name="Microsoft New Tai Lue" size="15.0" />
+               </font></TextField>
+            <Button fx:id="btnSubmit" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setImage" prefHeight="22.0" prefWidth="128.0" text="Submit">
+               <font>
+                  <Font name="Microsoft New Tai Lue Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="567.0" prefWidth="128.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnSmaller" mnemonicParsing="false" onAction="#makeImageSmaller" prefHeight="190.0" prefWidth="153.0" text="Smaller">
+               <font>
+                  <Font name="Microsoft New Tai Lue Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="btnBigger" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#makeImageBigger" prefHeight="189.0" prefWidth="144.0" text="Bigger">
+               <font>
+                  <Font name="Microsoft New Tai Lue Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="btnChangeColor" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeColorOfImage" prefHeight="189.0" prefWidth="143.0" text="Change Color">
+               <font>
+                  <Font name="Microsoft New Tai Lue Bold" size="16.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <AnchorPane fx:id="imageField" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
